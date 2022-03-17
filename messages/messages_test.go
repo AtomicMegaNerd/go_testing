@@ -1,5 +1,7 @@
 package messages
 
+// package messages_test (use this for black box testing)
+
 import "testing"
 
 func TestGreet(t *testing.T) {
@@ -18,5 +20,4 @@ func TestDepart(t *testing.T) {
 	if got != expect {
 		t.Errorf("Failed. Expected: %v, Got: %v", got, expect)
 	}
-
 }

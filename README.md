@@ -25,6 +25,44 @@ Go has several packages in the standard library which are useful for learning ho
 - Alternatively, use package\_test for "black box" tests where you do not have access to internal
   package private resources.
 
+## Go Test Command
+
+```bash
+go test # Run all tests in current directory
+```
+
+```bash
+go test -run {pkg1} {pkg2} ... {pkgn} # Test in specific packages
+```
+
+```bash
+go test ./... # Run tests in current package and descendants
+```
+
+```bash
+go test -v # Generate verbose output
+```
+
+```bash
+go test -run {regexp} # Run any tests matching {regexp}
+```
+
+```bash
+go test -cover # Shows code coverage total
+```
+
+```bash
+go test -coverprofile cover.out # Generate code coverage report to file cover.out
+```
+
+```bash
+go tool cover -func cover.out # Parse coverage report and show coverage totals per function
+```
+
+```bash
+go tool cover -html cover.out # Parse coverage report and show coverage info in web browser
+```
+
 ---
 
 ## Reporting Test Failures
