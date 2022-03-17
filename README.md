@@ -2,6 +2,8 @@
 
 This is some notes based on the Go Testing PluralSight.
 
+---
+
 ## Go Standard library
 
 Go has several packages in the standard library which are useful for learning how to write tests:
@@ -10,6 +12,59 @@ Go has several packages in the standard library which are useful for learning ho
 - testing/quick - Useful for black-box testing.
 - testing/iotest - Designed for testing Reader and Writer interfaces.
 - net/http/httptest - For testing HTTP connections and interfaces.
+
+---
+
+## Go Testing Naming Conventions
+
+- Always add a \_test suffix to test files in Go. These files are excluded from release binaries!
+- Always name functions TestFunctionName.
+- Accept one parameter - \*testing.T
+- Use the same package name as the file you are testing if you want "white box" tests with access
+  to internal resources.
+- Alternatively, use package\_test for "black box" tests where you do not have access to internal
+  package private resources.
+
+---
+
+## Reporting Test Failures
+
+### Immediate Failure
+
+Will exit the failing test immediately. It will exit the current test function but not the test
+suites.
+
+```go
+t.FailNow()
+```
+
+```go
+t.Fatal(args... interface{})
+```
+
+```go
+t.Fatalf(format string, args... interface{})
+```
+
+### Non-Immediate Failure
+
+The test will be marked as failed but the current test function will keep running. This is useful
+if you want to test multiple things about an object in a given test and make sure all of them
+do run even if one or more conditions do fail.
+
+```go
+t.Fail()
+```
+
+```go
+t.Error(args... interface{})
+```
+
+```go
+t.Errorf(format string, args... interface{})
+```
+
+---
 
 ## Community Projects
 
