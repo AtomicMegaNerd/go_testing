@@ -71,6 +71,14 @@ go tool cover -func cover.out # Parse coverage report and show coverage totals p
 go tool cover -html cover.out # Parse coverage report and show coverage info in web browser
 ```
 
+```bash
+go test -bench # Adding -bench to run benchmarks
+```
+
+```bash
+go test -bench . -benchtime 10s # Tell go test how long to run our benchmark tests
+```
+
 ---
 
 ## Reporting Test Failures
