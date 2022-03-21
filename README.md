@@ -4,6 +4,10 @@ This is some notes based on the Go Testing PluralSight.
 
 ---
 
+## Go Testing Documentation
+
+[https://pkg.go.dev/testing](https://pkg.go.dev/testing)
+
 ## Go Standard library
 
 Go has several packages in the standard library which are useful for learning how to write tests:
