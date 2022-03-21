@@ -56,6 +56,10 @@ go test -coverprofile cover.out # Generate code coverage report to file cover.ou
 ```
 
 ```bash
+go test -coverprofile count.out -covermode count # This counts low to high coverage based on scale.
+```
+
+```bash
 go tool cover -func cover.out # Parse coverage report and show coverage totals per function
 ```
 
@@ -142,4 +146,3 @@ This is a project for writing Mocks in Go:
 Full SQL database provider that is an in-memory mockable database:
 
 [https://github.com/golang/mock](https://github.com/golang/mock)
-
