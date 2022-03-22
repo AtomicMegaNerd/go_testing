@@ -8,6 +8,16 @@ This is some notes based on the Go Testing PluralSight.
 
 [https://pkg.go.dev/testing](https://pkg.go.dev/testing)
 
+There is also the go help command:
+
+```bash
+go help test
+```
+
+```bash
+go help testflag
+```
+
 ## Go Standard library
 
 Go has several packages in the standard library which are useful for learning how to write tests:
@@ -78,6 +88,26 @@ go test -bench # Adding -bench to run benchmarks
 ```bash
 go test -bench . -benchtime 10s # Tell go test how long to run our benchmark tests
 ```
+
+```bash
+go test -benchmem # Reports memory allocation statistics
+```
+
+```bash
+go test -trace {trace.out} # Record execution trace for analysis
+```
+
+```bash
+go test -{type}profile {file} # Generate profile
+```
+
+The profiles for above include:
+
+- block
+- cover
+- cpu
+- mem
+- mutex
 
 ---
 

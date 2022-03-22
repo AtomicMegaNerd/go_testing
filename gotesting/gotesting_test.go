@@ -30,3 +30,14 @@ func BenchmarkSHA512(b *testing.B) {
 		sha512.Sum512(data)
 	}
 }
+
+// Make a version of this test that allocates on the heap just so we can see
+// the allocations with the -benchmem flag for testing
+func BenchmarkSHA512Alloc(b *testing.B) {
+	data := []byte("Mary had a little lamb")
+	b.StartTimer()
+	for i := 0; i < b.N; i++ {
+		h := sha512.New() // This will allocate
+		h.Sum(data)
+	}
+}
