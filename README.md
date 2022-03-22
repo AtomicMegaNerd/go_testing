@@ -39,7 +39,11 @@ Go has several packages in the standard library which are useful for learning ho
 - Alternatively, use package\_test for "black box" tests where you do not have access to internal
   package private resources.
 
+---
+
 ## Go Test Command
+
+### Basic Testing
 
 ```bash
 go test # Run all tests in current directory
@@ -61,6 +65,8 @@ go test -v # Generate verbose output
 go test -run {regexp} # Run any tests matching {regexp}
 ```
 
+### Test coverage
+
 ```bash
 go test -cover # Shows code coverage total
 ```
@@ -81,6 +87,8 @@ go tool cover -func cover.out # Parse coverage report and show coverage totals p
 go tool cover -html cover.out # Parse coverage report and show coverage info in web browser
 ```
 
+### Benchmarking
+
 ```bash
 go test -bench # Adding -bench to run benchmarks
 ```
@@ -88,6 +96,8 @@ go test -bench # Adding -bench to run benchmarks
 ```bash
 go test -bench . -benchtime 10s # Tell go test how long to run our benchmark tests
 ```
+
+### Profiling
 
 ```bash
 go test -benchmem # Reports memory allocation statistics
@@ -108,6 +118,14 @@ The profiles for above include:
 - cpu
 - mem
 - mutex
+
+### Analyzing Profile Information
+
+This takes us into the profiler:
+
+```bash
+go tool pprof profile.out
+```
 
 ---
 
